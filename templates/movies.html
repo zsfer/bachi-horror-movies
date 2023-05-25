@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Movies {% endblock %}
+
+{% block header%} All the movies. {%endblock%}
+
+{% block content %}
+
+    <div class="space-y-10">
+    {% for category, movies in movies|groupby('sub_genre') %}
+        <div>
+            <h3 class="mb-3">{{category}}</h3>
+
+            <div class="grid grid-cols-8 gap-5">
+                {% for movie in movies %}
+                    <div class="border border-zinc-800 rounded-md">
+                        <a href="/movies/{{movie.slug}}"><img class="w-full rounded-t-md" src={{movie.poster_url}} alt={{movie.name}}/></a>
+                        <div class="p-3">
+                            <a href="/movies/{{movie.slug}}"><h4>{{movie.name}}</h4></a>
+                            <div class="inline-flex text-sm text-zinc-500">
+                                {{movie.release_year}} • {{movie.cast}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+* {
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    background-color: #09090b;
+    font-family: "DM Sans";
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+    font-weight: 700 !important;
+}
+
+.logo {
+    font-family: "DM Serif Display";
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.title {
+    font-family: "DM Serif Display" !important;
+    font-weight: 700;
+}

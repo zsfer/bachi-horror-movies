@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Movies {% endblock %}
+
+{% block content %}
+
+<div class="mx-64 flex justify-between gap-32">
+    <div class="flex flex-col gap-3 w-full">
+        <h1 class="text-7xl font-serif">{{movie.name}}</h1> 
+        <p class="ml-1">{{movie.release_year}} • {{movie.sub_genre}}</p>
+        <hr class="border-zinc-800">
+        <p class="my-5">{{movie.description}}</p>
+        <hr class="border-zinc-800">
+        <div class="flex flex-col gap-5">
+            <div>
+                <h4 class="text-sm text-zinc-600">Rating</h4>
+                <span>{{movie.rating}}☆</span>
+            </div>
+
+            <div>
+                <h4 class="text-sm text-zinc-600">Director</h4>
+                <p class="text-md text-zinc-200">{{movie.director}}</p>
+            </div>
+
+            <div>
+                <h4 class="text-sm text-zinc-600">Cast</h4>
+                <p class="text-md text-zinc-200">{{movie.cast}}</p>
+            </div>
+        </div>
+    </div>
+
+    <img class="rounded-md" src={{movie.poster_url}} alt={{movie.name}}/>
+</div>
+{% endblock %}

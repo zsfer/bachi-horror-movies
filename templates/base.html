@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+      html, body {
+          height: 100%;
+          background-color: #09090b;
+          font-family: "DM Sans";
+          color: white;
+          overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4 {
+          text-transform: uppercase;
+          font-weight: 700 !important;
+      }
+
+      .logo {
+          font-family: "DM Serif Display";
+          font-weight: 400;
+          text-transform: uppercase;
+      }
+
+      .title {
+          font-family: "DM Serif Display" !important;
+          font-weight: 700;
+      }
+    </style>
+
+    <script src="{{ url_for('static', path='/js/tailwind.config.js') }}"></script>
+
+    <title> {% block title %}{% endblock %} | Phantasma </title>
+</head>
+<body>
+    <div class="mx-20 my-10 space-y-20">
+      <header class="mx-10 flex justify-between">
+        <a href="/" class="logo font-bold text-red-600 text-2xl">Phantasma <p class="text-xs lowercase font-sans text-red-800">Enter the realm of Phantasma and confront your deepest fears.</p></a>
+
+        <nav>
+          <ul class="flex gap-5">
+            <li><a href="/movies" class="text-zinc-700 hover:text-zinc-100">Movies</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+
+        <h1 class="text-red-600 text-3xl mb-5">{% block header %}{% endblock %}</h1> 
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+
+    <footer class="bg-zinc-900 px-20 py-10 gap-96 flex justify-center items-center">
+      <a href="/" class="logo font-bold text-red-600 text-2xl">Phantasma <p class="text-xs lowercase font-sans text-red-800">Enter the realm of Phantasma and confront your deepest fears.</p></a>
+
+      <nav>
+        <ul class="flex flex-col gap-2">
+          <li><a href="/movies" class="text-zinc-100">Movies</a></li>
+        </ul>
+      </nav>
+    </footer>
+</body>
+</html>
